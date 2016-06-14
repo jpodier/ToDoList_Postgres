@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing To Do List2s</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Task name</th>
+      <th>Description</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @to_do_list2s.each do |to_do_list2| %>
+      <tr>
+        <td><%= to_do_list2.task_name %></td>
+        <td><%= to_do_list2.description %></td>
+        <td><%= to_do_list2.status %></td>
+        <td><%= link_to 'Show', to_do_list2 %></td>
+        <td><%= link_to 'Edit', edit_to_do_list2_path(to_do_list2) %></td>
+        <td><%= link_to 'Destroy', to_do_list2, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New To do list2', new_to_do_list2_path %>
